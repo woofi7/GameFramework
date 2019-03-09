@@ -10,6 +10,7 @@ public class Dice implements Comparable {
     public Dice(int faceNb) {
         this.faceNb = faceNb;
         this.currentValue = 0;
+        this.rand = new Random();
     }
 
     public int shuffle() {
@@ -23,6 +24,7 @@ public class Dice implements Comparable {
 
     @Override
     public int compareTo(Object o) {
-        return 0;
+        Dice dice = (Dice) o;
+        return Integer.compare(dice.getCurrentValue(), this.currentValue);
     }
 }
