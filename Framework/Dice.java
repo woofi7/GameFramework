@@ -13,6 +13,10 @@ public class Dice implements Comparable {
         this.rand = new Random();
     }
 
+    public Dice() {
+        this(6);
+    }
+
     public int shuffle() {
         currentValue = rand.nextInt(faceNb + 1);
         return currentValue;

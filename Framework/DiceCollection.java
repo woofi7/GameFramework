@@ -8,6 +8,10 @@ public class DiceCollection implements Collection, Iterable {
     private int size;
 
     public DiceCollection() {
+        this(0);
+    }
+
+    public DiceCollection(int length) {
         this.dices = new Dice[0];
         size = 0;
     }
@@ -126,5 +130,14 @@ public class DiceCollection implements Collection, Iterable {
             return null;
         }
         return dices[position];
+    }
+
+    public DiceCollection clone() {
+        try {
+            return (DiceCollection) super.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }
