@@ -13,6 +13,12 @@ public class Dice implements Comparable {
         this.rand = new Random();
     }
 
+    public Dice(int faceNb, int currentValue) {
+        this.faceNb = faceNb;
+        this.currentValue = currentValue;
+        this.rand = new Random();
+    }
+
     public Dice() {
         this(6);
     }

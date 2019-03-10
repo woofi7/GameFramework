@@ -3,7 +3,7 @@ package UnitTests;
 import Framework.Dice;
 
 import org.junit.*;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 public class DiceTest {
 
@@ -11,22 +11,13 @@ public class DiceTest {
     private Dice dice2;
 
     /**
-     * To do before: dice init
-     */
-    @Before
-    public void before(){
-        dice1 = new Dice();
-        dice2 = new Dice();
-    }
-
-    /**
      * Compares dice numbers
      * true if dice1 > dice2
      */
     @Test
-    public void HigherDiceTest(){
-        //dice1.setFaceObtenue(4);
-        //dice2.setFaceObtenue(5);
+    public void higherDiceTest(){
+        dice1 = new Dice(6,4);
+        dice2 = new Dice(6,5);
         assertTrue(dice1.compareTo(dice2)==1);
     }
 
@@ -36,8 +27,8 @@ public class DiceTest {
      */
     @Test
     public void LowerDiceTest(){
-        //dice1.setFaceObtenue(4);
-        //dice2.setFaceObtenue(5);
+        dice1 = new Dice(6,4);
+        dice2 = new Dice(6,5);
         assertTrue(dice2.compareTo(dice1)==-1);
     }
 
@@ -47,16 +38,17 @@ public class DiceTest {
      */
     @Test
     public void sameDiceTest(){
-        //dice1.setFaceObtenue(4);
+        dice1 = new Dice(6,4);
         assertTrue(dice1.compareTo(dice1)==0);
     }
 
     /**
      * Checks if a dice is null
+     * and returns an exception if so
      */
-    @Test(expected=IllegalArgumentException.class)
-    public void NullDiceTest(){
-        //dice1.setFaceObtenue(4);
+    @Test(expected=NullPointerException.class)
+    public void nullDiceTest(){
+        dice1 = new Dice(6,4);
         dice1.compareTo(null);
     }
 }
