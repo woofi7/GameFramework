@@ -18,6 +18,10 @@ public class Player implements Comparable {
         return score;
     }
 
+    public void addScore(int score) {
+        this.score += score;
+    }
+
     public DiceCollection getDices() {
         return dices;
     }
