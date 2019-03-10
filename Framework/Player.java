@@ -18,17 +18,30 @@ public class Player implements Comparable {
         return score;
     }
 
-    public DiceCollection getDices() {
-        return dices;
+
+    public void addDices(int quantity, int value) {
+        for (int i = 0; i < quantity; i++) {
+            dices.add(new Dice(value));
+        }
     }
 
-    public void setDices(DiceCollection dices) {
-        this.dices = dices.clone();
+    public int[] shuffleDices() {
+        int[] value = new int[dices.size()];
+        for (int i = 0; i < dices.size(); i++) {
+            value[i] = ((Dice) dices.get(i)).shuffle();
+        }
+        return value;
     }
 
     @Override
     public int compareTo(Object o) {
         Player player = (Player) o;
         return Integer.compare(player.getScore(), this.score);
+    }
+
+    public void incrementScore(int value) {
+        if (value > 0) {
+            score += value;
+        }
     }
 }
