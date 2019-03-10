@@ -1,11 +1,13 @@
 package Games.Bunco;
 
+import Framework.Game;
 import Framework.IGameFactory;
 
 public class BuncoTemplate implements IGameFactory {
 
     @Override
-    public void initializeGame(int playerNb) {
-
+    public Game initializeGame(int playerNb) {
+        BuncoGame game = new BuncoGame(playerNb);
+        return game;
     }
 }
