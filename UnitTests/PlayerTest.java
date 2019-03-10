@@ -20,7 +20,7 @@ public class PlayerTest {
     }
 
     /**
-     * Compares dice numbers
+     * Adds and compares player scores
      * true if player1's score > player2's score
      */
     @Test
@@ -31,7 +31,7 @@ public class PlayerTest {
     }
 
     /**
-     * Compares dice numbers
+     * Adds and compares player scores
      * true if player1's score < player2's score
      */
     @Test
@@ -42,7 +42,7 @@ public class PlayerTest {
     }
 
     /**
-     * Compares dice numbers
+     * Adds and compares player scores
      * true if players' scores are the same
      */
     @Test
