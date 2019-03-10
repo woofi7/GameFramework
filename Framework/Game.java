@@ -3,30 +3,18 @@ package Framework;
 public class Game {
     private int nbRounds;
     private PlayerCollection players;
+    private int actualRound;
 
-    public void setPlayerDices(int quantity, int value){
-        for (Object player : players) {
-            Player p = (Player) player;
-            p.addDices(quantity, value);
-        }
-    }
-
-    protected void setNbRounds(int number) {
+    public void setNbRounds(int number) {
         this.nbRounds = number;
     }
 
-    protected int getNbRounds() {
+    public int getNbRounds() {
         return nbRounds;
     }
 
-    protected void addPlayer(int number) {
-        for (int i = 0; i < number; i++) {
-            players.add(new Player());
-        }
-    }
-
-    protected void addPlayer() {
-        addPlayer(1);
+    public void addPlayer(Player player) {
+        players.add(player);
     }
 
     protected boolean removePlayer(Player player) {
@@ -37,4 +25,15 @@ public class Game {
         return players;
     }
 
+    public void startGame() {
+        this.actualRound = 1;
+    }
+
+    public int getActualRound() {
+        return actualRound;
+    }
+
+    public void incrementRound() {
+        actualRound++;
+    }
 }

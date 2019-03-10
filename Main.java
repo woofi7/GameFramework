@@ -1,3 +1,5 @@
+import Framework.Game;
+import Games.Bunco.BuncoGame;
 import Games.Bunco.BuncoTemplate;
 
 public class Main {
@@ -6,6 +8,7 @@ public class Main {
         System.out.println("Hello World!");
         BuncoTemplate buncoTemplate = new BuncoTemplate();
 
-        buncoTemplate.initializeGame(2);
+        Game game = buncoTemplate.initializeGame(2);
+        game.startGame();
     }
 }

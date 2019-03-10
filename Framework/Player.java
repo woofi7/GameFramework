@@ -19,10 +19,8 @@ public class Player implements Comparable {
     }
 
 
-    public void addDices(int quantity, int value) {
-        for (int i = 0; i < quantity; i++) {
-            dices.add(new Dice(value));
-        }
+    public void addDices(DiceCollection dices) {
+        this.dices = dices;
     }
 
     public int[] shuffleDices() {

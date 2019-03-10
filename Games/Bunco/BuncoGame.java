@@ -5,26 +5,18 @@ import Framework.Player;
 
 public class BuncoGame extends Game {
     private ScoreStrategieBunco scoreStrategie;
-    private int actualRound;
 
-    public BuncoGame(int nbPlayers) {
+    public BuncoGame() {
         this.scoreStrategie = new ScoreStrategieBunco();
-
-        setNbRounds(6);
-        addPlayer(nbPlayers);
-
-        for (Object player : getPlayers()) {
-            ((Player) player).addDices(3, 6);
-        }
     }
 
     public void startGame() {
-        this.actualRound = 1;
-        while (actualRound < getNbRounds()) {
-            playRound(actualRound);
+        super.startGame();
+        while (getActualRound() < getNbRounds()) {
+            playRound(getActualRound());
             Player player = scoreStrategie.winner(getPlayers());
-            System.out.println(player + " win the game");
-            actualRound++;
+            System.out.println(player + " win the round");
+            incrementRound();
         }
     }
 
@@ -43,13 +35,5 @@ public class BuncoGame extends Game {
                 }
             } while(playing);
         }
-    }
-
-    public int getActualRound() {
-        return actualRound;
-    }
-
-    public void setActualRound(int actualRound) {
-        this.actualRound = actualRound;
     }
 }
