@@ -61,8 +61,8 @@ public class GameTest {
     }
 
     /**
-     * Creates a new game with a player and some dices to add up
-     * returns
+     * Creates some dices to add to a player hand
+     * Return true if the second dice of the player's hand is dice2
      */
     @Test
     public void diceCollectionTest(){
@@ -71,13 +71,14 @@ public class GameTest {
         DiceCollection dc = new DiceCollection(2);
         dc.add(dice1);
         dc.add(dice2);
-        Dice dice3 = (Dice)dc.iterator().next();
+        player1.addDices(dc);
+        Dice dice3 = (Dice)player1.getDices().iterator().next();
         assertEquals(dice2, dice3);
     }
 
     /**
-     * Creates a new game with a player and some dices to add up
-     * returns
+     * Creates a dice collection and shakes one of the dices
+     * returns true if the shaken dice' value is different
      */
     @Test
     public void diceShuffleTest(){

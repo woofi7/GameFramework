@@ -24,6 +24,8 @@ public class Player implements Comparable {
         this.dices = dices;
     }
 
+    public DiceCollection getDices() { return dices; };
+
     public int[] shuffleDices() {
         int[] value = new int[dices.size()];
         for (int i = 0; i < dices.size(); i++) {
