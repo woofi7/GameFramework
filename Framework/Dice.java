@@ -32,6 +32,9 @@ public class Dice implements Comparable {
     public int getCurrentValue() {
         return currentValue;
     }
+    public int getFaceNb() {
+        return faceNb;
+    }
 
     @Override
     public int compareTo(Object o) {

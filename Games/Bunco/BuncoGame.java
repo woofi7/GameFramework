@@ -9,6 +9,7 @@ public class BuncoGame extends Game {
     public BuncoGame() {
         this.scoreStrategie = new ScoreStrategieBunco();
     }
+    public ScoreStrategieBunco getRules() { return this.scoreStrategie; }
 
     public void startGame() {
         super.startGame();
