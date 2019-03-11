@@ -14,7 +14,7 @@ public class BuncoGameTest {
     @Before
     public void before(){
         buncoTemplate = new BuncoTemplate();
-        buncoTemplate.initializeGame(0,0);
+        buncoTemplate.initializeGame(0);
     }
 
     /**
@@ -33,4 +33,6 @@ public class BuncoGameTest {
     public void test1(){
 
     }
+
+
 }

@@ -2,7 +2,7 @@ package Framework;
 
 public class Game {
     private int nbRounds;
-    private PlayerCollection players;
+    private PlayerCollection players = new PlayerCollection();
     private int actualRound;
 
     public void setNbRounds(int number) {
@@ -21,7 +21,7 @@ public class Game {
         return players.remove(player);
     }
 
-    protected PlayerCollection getPlayers() {
+    public PlayerCollection getPlayers() {
         return players;
     }
 
